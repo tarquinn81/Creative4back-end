@@ -127,7 +127,7 @@ app.get('/api/cart', (req, res) => {
 
 app.post('/api/cart/:id', (req, res) => {
   console.log("In cart post");
-  id = parseInt(req.params.id);
+  let id = req.params.id;
   const foundItem = cart.find(item => item.id == id);
   if(foundItem) {
       foundItem.quantity += 1;
